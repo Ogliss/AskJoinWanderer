@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "1qVyfIAFtZ6rpupvCrZdvA4LmoZpLH0GXp+xtFoW4i04hxWjWU5tplIBj+MDbVNfkFbWIxBPuf9dtV3K+d2Lbw==",
+  "success": true,
+  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AskJoinWanderer\\Source\\JoinsPlus\\JoinsPlus\\WandererJoinPlus.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\lib.harmony\\2.0.1\\lib.harmony.2.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
