@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AskJoinWanderer\\1.2\\Source\\JoinsPlus\\JoinsPlus\\WandererJoinPlus.csproj": {}
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AskJoinWanderer\\1.2\\Source\\JoinsPlus\\JoinsPlus\\WandererJoinPlus-1.2.csproj": {}
   },
   "projects": {
-    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AskJoinWanderer\\1.2\\Source\\JoinsPlus\\JoinsPlus\\WandererJoinPlus.csproj": {
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AskJoinWanderer\\1.2\\Source\\JoinsPlus\\JoinsPlus\\WandererJoinPlus-1.2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AskJoinWanderer\\1.2\\Source\\JoinsPlus\\JoinsPlus\\WandererJoinPlus.csproj",
-        "projectName": "WandererJoinPlus",
-        "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AskJoinWanderer\\1.2\\Source\\JoinsPlus\\JoinsPlus\\WandererJoinPlus.csproj",
+        "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AskJoinWanderer\\1.2\\Source\\JoinsPlus\\JoinsPlus\\WandererJoinPlus-1.2.csproj",
+        "projectName": "WandererJoinPlus-1.2",
+        "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AskJoinWanderer\\1.2\\Source\\JoinsPlus\\JoinsPlus\\WandererJoinPlus-1.2.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AskJoinWanderer\\1.2\\Source\\JoinsPlus\\JoinsPlus\\obj\\",
         "projectStyle": "PackageReference",

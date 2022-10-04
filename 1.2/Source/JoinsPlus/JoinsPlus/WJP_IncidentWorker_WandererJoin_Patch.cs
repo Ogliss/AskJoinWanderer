@@ -8,7 +8,6 @@ using Verse;
 
 namespace WandererJoinPlus
 {
-	// Token: 0x02000006 RID: 6
 	[HarmonyPatch]
 	public static class WJP_Wanderer_Joins_Patch
 	{
@@ -16,24 +15,19 @@ namespace WandererJoinPlus
 		public static IEnumerable<MethodBase> PatchAllPlayerMethods()
 		{
 			IEnumerable<Type> types = GenTypes.AllTypes.Where(x => x.Name.Contains("WandererJoin"));
-		//	Log.Message("WJP_IncidentWorker checking " + types.Count() + " types");
 			List<MethodInfo> methods = new List<MethodInfo>();
 			foreach (Type item in types)
             {
-			//	Log.Message("checking " + item.Name);
 				MethodInfo m = AccessTools.Method(item, "TryExecuteWorker");
-
 				if (m != null)
 				{
-				//	Log.Message("returning  " + item.Name+" "+m.Name);
 					yield return m as MethodBase;
 				} 
 			}
 		}
-		// Token: 0x0600000C RID: 12 RVA: 0x00002C5C File Offset: 0x00000E5C
+
 		public static bool Prefix(ref bool __result, ref IncidentWorker __instance, IncidentParms parms)
 		{
-		//	Log.Message("WJP_IncidentWorker checking "+ __instance.def.defName);
 			if (__instance.def.defName.Contains("WandererJoin") && !__instance.def.defName.Contains("ManInBlack"))
 			{
 				Map map = (Map)parms.target;
@@ -62,7 +56,7 @@ namespace WandererJoinPlus
                 {
 					pawn.health.AddHediff(HediffDef.Named("AA_MimeHediff"), null, null, null);
 				}
-				TaggedString ttexta;
+				TaggedString ttexta = null;
 				TaggedString tlabela = __instance.def.letterLabel.Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true);
 				DiaNode diaNode;
 				bool abasia = __instance.def.defName == "WandererJoinAbasia";
@@ -70,12 +64,12 @@ namespace WandererJoinPlus
 				{
 					WJP_Wanderer_Joins_Patch.CheckHediff(__instance, pawn);
 					WJP_Wanderer_Joins_Patch.CheckHediff2(__instance, pawn, ref ttexta); 
-					diaNode = new DiaNode(WJP_Wanderer_Joins_Patch.CreateTransportPodText(__instance, pawn));
+					diaNode = new DiaNode(GenPersonStatText.CreateTransportPodText(__instance, pawn));
 				}
 				else
 				{
 					ttexta = __instance.def.letterText.Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true);
-					diaNode = new DiaNode(WJP_Wanderer_Joins_Patch.CreateWandererText(pawn));
+					diaNode = new DiaNode(GenPersonStatText.CreateWandererText(pawn));
 				}
 				DiaOption diaOptionDetails = new DiaOption(Translator.Translate("ClickForMoreInfo"));
 				diaOptionDetails.action = delegate ()
@@ -108,19 +102,6 @@ namespace WandererJoinPlus
 			return true;
 		}
 
-		// Token: 0x0600000D RID: 13 RVA: 0x00002EE8 File Offset: 0x000010E8
-		private static string CreateWandererText(Pawn wanderer)
-		{
-			TaggedString text = TranslatorFormattedStringExtensions.Translate("WandererJoinDesc", wanderer.NameFullColored, wanderer.NameShortColored, wanderer.story.Title.ToLower(), wanderer.ageTracker.AgeBiologicalYears.ToString(), wanderer.def.label).Formatted(wanderer.Named("PAWN")).AdjustedFor(wanderer, "PAWN", true);
-			if (wanderer.gender != Gender.None)
-			{
-				text += " " + wanderer.gender.GetLabel();
-			}
-			text += ".";
-			PawnRelationUtility.TryAppendRelationsWithColonistsInfo(ref text, wanderer);
-			GenPersonStatText.AppendStats(ref text, wanderer);
-			return text;
-		}
 		public static void CheckHediff(IncidentWorker __instance, Pawn pawn)
 		{
 			if (__instance.def.pawnHediff != null)
@@ -132,18 +113,6 @@ namespace WandererJoinPlus
 		{
 			outstring = (__instance.def.pawnHediff != null) ? __instance.def.letterText.Formatted(pawn.Named("PAWN"), __instance.def.pawnHediff.Named("HEDIFF")).AdjustedFor(pawn, "PAWN", true) : __instance.def.letterText.Formatted(pawn.Named("PAWN")).AdjustedFor(pawn, "PAWN", true);
 
-		}
-		private static string CreateTransportPodText(IncidentWorker __instance, Pawn wanderer)
-		{
-			TaggedString text = TranslatorFormattedStringExtensions.Translate("WandererPodJoinDesc", wanderer.NameFullColored, wanderer.NameShortColored, wanderer.story.Title.ToLower(), wanderer.ageTracker.AgeBiologicalYears.ToString(), wanderer.def.label, __instance.def.pawnHediff.label).Formatted(wanderer.Named("PAWN"), __instance.def.pawnHediff.Named("HEDIFF")).AdjustedFor(wanderer, "PAWN", true);
-			if (wanderer.gender != Gender.None)
-			{
-				text += " " + wanderer.gender.GetLabel();
-			}
-			text += ".";
-			PawnRelationUtility.TryAppendRelationsWithColonistsInfo(ref text, wanderer);
-			GenPersonStatText.AppendStats(ref text, wanderer);
-			return text;
 		}
 	}
 }

@@ -55,24 +55,28 @@
     <Compile Include="WJP_IncidentWorker_WandererJoin_Patch.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref">
+      <Version>1.2.2905</Version>
+    </PackageReference>
     <PackageReference Include="Lib.Harmony">
-      <Version>2.0.1</Version>
+      <Version>2.0.4</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="VEE">
-      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\1938420742\1.1\Assemblies\VEE.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\.editorconfig">
-      <Link>.editorconfig</Link>
-    </None>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+      call "$(SolutionDir)\Scripts\ModCopy 1.2.bat"
+      call :REPORT_ERRORLEVEL
+      goto :EOF
+
+      :REPORT_ERRORLEVEL
+      echo.
+      if ERRORLEVEL 16 echo ***FATAL ERROR*** &amp; goto :EOF
+      if ERRORLEVEL 8 echo **FAILED COPIES** &amp; goto :EOF
+      if ERRORLEVEL 4 echo *MISMATCHES* &amp; goto :EOF
+      if ERRORLEVEL 2 echo EXTRA FILES &amp; goto :EOF
+      if ERRORLEVEL 1 echo Copy successful &amp; goto :EOF
+      if ERRORLEVEL 0 echo –no change– &amp; goto :EOF
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>

@@ -34,7 +34,7 @@ namespace WandererJoinPlus
 		public static bool Prefix(ref bool __result, ref IncidentWorker __instance, IncidentParms parms)
 		{
 		//	Log.Message("WJP_IncidentWorker checking "+ __instance.def.defName);
-			if (__instance.def.defName.Contains("WandererJoin") && !__instance.def.defName.Contains("ManInBlack"))
+			if (__instance.def.defName.Contains("WandererJoin") && !__instance.def.defName.Contains("ManInBlack") && !__instance.def.defName.Contains("StrangerInBlack"))
 			{
 				Map map = (Map)parms.target;
 				if (!map.mapPawns.AnyColonistSpawned)
@@ -80,7 +80,7 @@ namespace WandererJoinPlus
 				DiaOption diaOptionDetails = new DiaOption(Translator.Translate("ClickForMoreInfo"));
 				diaOptionDetails.action = delegate ()
 				{
-					Find.WindowStack.Add(new Dialog_InfoCard(pawn));
+					Find.WindowStack.Add(new Dialog_InfoCard(pawn, null));
 				};
 				diaNode.options.Add(diaOptionDetails);
 				DiaOption diaOption = new DiaOption(Translator.Translate(abasia ? "WandererPodJoinAccept" : "WandererJoinAccept"));

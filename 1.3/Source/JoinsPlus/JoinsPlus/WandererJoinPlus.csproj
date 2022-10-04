@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <TargetFrameworkProfile />
     <NoWin32Manifest>False</NoWin32Manifest>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <NoStdLib>False</NoStdLib>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
@@ -48,14 +48,17 @@
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="GenPersonStatText.cs" />
     <Compile Include="WandererJoinPlus.cs" />
+    <Compile Include="WJP_ChoiceLetter_AcceptJoiner_Choices_Patch.cs" />
+    <Compile Include="WJP_QuestNode_Root_WandererJoin_WalkIn_SendLetter_Patch.cs" />
     <Compile Include="WJP_IncidentWorker_WandererJoin_Patch.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.3.0" GeneratePathProperty="true" />
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.3.3117" GeneratePathProperty="true" />
     <PackageReference Include="Lib.Harmony">
-      <Version>2.0.4</Version>
+      <Version>2.1.1</Version>
     </PackageReference>
     <PackageReference Include="TaskPubliciser">
       <Version>1.0.3</Version>

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "1qVyfIAFtZ6rpupvCrZdvA4LmoZpLH0GXp+xtFoW4i04hxWjWU5tplIBj+MDbVNfkFbWIxBPuf9dtV3K+d2Lbw==",
+  "dgSpecHash": "Ukw9wO5gYFrZ22cEVx6zjWITxmQ9D6IagfYq9BwbuP6FVDunbKCp1JKmf6NTYt9cjw6bnw3y8xIL1YGOlpWaRg==",
   "success": true,
-  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AskJoinWanderer\\Source\\JoinsPlus\\JoinsPlus\\WandererJoinPlus.csproj",
+  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AskJoinWanderer\\1.2\\Source\\JoinsPlus\\JoinsPlus\\WandererJoinPlus-1.2.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\User\\.nuget\\packages\\lib.harmony\\2.0.1\\lib.harmony.2.0.1.nupkg.sha512"
+    "C:\\Users\\User\\.nuget\\packages\\krafs.rimworld.ref\\1.2.2905\\krafs.rimworld.ref.1.2.2905.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\lib.harmony\\2.0.4\\lib.harmony.2.0.4.nupkg.sha512"
   ],
   "logs": []
 }

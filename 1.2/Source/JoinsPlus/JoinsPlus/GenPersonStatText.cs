@@ -6,10 +6,32 @@ using Verse;
 
 namespace WandererJoinPlus
 {
-	// Token: 0x02000002 RID: 2
 	public static class GenPersonStatText
 	{
-		// Token: 0x06000001 RID: 1 RVA: 0x00002050 File Offset: 0x00000250
+		public static string CreateWandererText(Pawn wanderer)
+		{
+			TaggedString text = TranslatorFormattedStringExtensions.Translate("WandererJoinDesc", wanderer.NameFullColored, wanderer.NameShortColored, wanderer.story.Title.ToLower(), wanderer.ageTracker.AgeBiologicalYears.ToString(), wanderer.def.label).Formatted(wanderer.Named("PAWN")).AdjustedFor(wanderer, "PAWN", true);
+			if (wanderer.gender != Gender.None)
+			{
+				text += " " + wanderer.gender.GetLabel();
+			}
+			text += ".";
+			PawnRelationUtility.TryAppendRelationsWithColonistsInfo(ref text, wanderer);
+			GenPersonStatText.AppendStats(ref text, wanderer);
+			return text;
+		}
+		public static string CreateTransportPodText(IncidentWorker __instance, Pawn wanderer)
+		{
+			TaggedString text = TranslatorFormattedStringExtensions.Translate("WandererPodJoinDesc", wanderer.NameFullColored, wanderer.NameShortColored, wanderer.story.Title.ToLower(), wanderer.ageTracker.AgeBiologicalYears.ToString(), wanderer.def.label, __instance.def.pawnHediff.label).Formatted(wanderer.Named("PAWN"), __instance.def.pawnHediff.Named("HEDIFF")).AdjustedFor(wanderer, "PAWN", true);
+			if (wanderer.gender != Gender.None)
+			{
+				text += " " + wanderer.gender.GetLabel();
+			}
+			text += ".";
+			PawnRelationUtility.TryAppendRelationsWithColonistsInfo(ref text, wanderer);
+			GenPersonStatText.AppendStats(ref text, wanderer);
+			return text;
+		}
 		public static void AppendStats(ref TaggedString text, Pawn pawn)
 		{
 			StringBuilder stringBuilder = new StringBuilder(text);

@@ -1,0 +1,5 @@
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AskJoinWanderer\1.2\Assemblies\WandererJoinPlus.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AskJoinWanderer\1.2\Source\JoinsPlus\JoinsPlus\obj\Debug\WandererJoinPlus-1.2.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AskJoinWanderer\1.2\Source\JoinsPlus\JoinsPlus\obj\Debug\WandererJoinPlus-1.2.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AskJoinWanderer\1.2\Source\JoinsPlus\JoinsPlus\obj\Debug\WandererJoinPlus-1.2.csproj.CopyComplete
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AskJoinWanderer\1.2\Source\JoinsPlus\JoinsPlus\obj\Debug\WandererJoinPlus.dll
