@@ -1,0 +1,7 @@
+D:\Steam\steamapps\common\RimWorld\Mods\TI - Joins +\Source\JoinsPlus\JoinsPlus\obj\Debug\JoinsPlus.csprojResolveAssemblyReference.cache
+D:\Steam\steamapps\common\RimWorld\Mods\TI - Joins +\Assemblies\JoinsPlus.dll
+D:\Steam\steamapps\common\RimWorld\Mods\TI - Joins +\Source\JoinsPlus\JoinsPlus\obj\Debug\JoinsPlus.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\JoinAsk\Assemblies\JoinsPlus.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\JoinAsk\Source\JoinsPlus\JoinsPlus\obj\Debug\JoinsPlus.csproj.CopyComplete
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\JoinAsk\Source\JoinsPlus\JoinsPlus\obj\Debug\JoinsPlus.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\JoinAsk\Source\JoinsPlus\JoinsPlus\obj\Debug\JoinsPlus.csprojAssemblyReference.cache
